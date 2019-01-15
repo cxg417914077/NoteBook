@@ -134,3 +134,16 @@ Date:   Fri May 18 20:59:18 2018 +0800
 `git reset --hard commit_id`
 
 回退到指定的`commit_id`对应的版本，`commit_id`可以替换成`HEAD`表示，在Git中，用`HEAD`表示当前版本上一个版本就是`HEAD^`，上上一个版本就是`HEAD^^`，当然往上100个版本写100个`^`比较容易数不过来，所以写成`HEAD~100`
+
+## 标签发布
+通常的git push不会将标签对象提交到git服务器，我们需要进行显式的操作：
+$ git push origin v0.1.2 # 将v0.1.2标签提交到git服务器
+$ git push origin –tags # 将本地所有标签一次性提交到git服务器
+
+注意：如果想看之前某个标签状态下的文件，可以这样操作
+
+1.git tag   查看当前分支下的标签
+
+2.git  checkout v0.21   此时会指向打v0.21标签时的代码状态，（但现在处于一个空的分支上）
+
+3. cat  test.txt   查看某个文件
