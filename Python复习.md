@@ -799,6 +799,12 @@ min= a if a<b else b
 
 > Python中一切皆对象
 
+Python中对象分成两类：可变对象和不可变对象。所谓可变对象是指，对象的内容可变，而不可变对象是指对象内容不可变。
+
+**不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)**
+
+**可变（mutable）：字典型(dictionary)、列表型(list)、集合(list)**
+
 #### 对象三要素
 
 id（唯一标识），type（对象的类型），value（对象中存储的数据）
@@ -1777,6 +1783,8 @@ l1.release() # 开锁
 ### 网络编程
 
 #### [TCP协议](https://mp.weixin.qq.com/s/En4z9y9rgcnNsKQdruHG3A)
+
+TCP协议是一种面向连接的、可靠的、基于字节流的运输层通信协议。
 
 TCP 是一种面向连接的单播协议，在发送数据前，通信双方必须在彼此间建立一条连接。
 
