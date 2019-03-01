@@ -179,13 +179,10 @@ for 变量 in 序列：
 
 ####  结束循环
 
-`break`
-
-​	立即结束离它最近的循环，也会将`while`中的`else`一起结束掉
-
-`continue`
-
-​	用来跳过当次循环，不执行本次循环代码块，直接进入下一次循环
+```python
+break	#立即结束离它最近的循环，也会将`while`中的`else`一起结束掉
+continue	#用来跳过当次循环，不执行本次循环代码块，直接进入下一次循环
+```
 
 ### 函数（三要素：功能、参数、返回值）
 
@@ -277,11 +274,11 @@ list（列表），str（字符串），tuple（元组）
 
 序列间转换
 
-​	` list()  `    将其他类型转换为列表
-
-​	 `str()`     将其他的类型转换为字符串
-
-​	 `tuple()` 将其他的类型转换为元组
+```python
+list()     #将其他类型转换为列表
+str()     #将其他的类型转换为字符串
+tuple()   #将其他的类型转换为元组
+```
 
 #### 序列的通用操作
 
@@ -302,79 +299,31 @@ s[i:j]
                 j 结束索引（不包括）
                 k 步长
 ```
-​	`x in s`
-
-​	检查一个序列中是否包含指定元素
-
-​	`x not in s`
-
-​	检查一个序列中是否不包含某个元素
-
-​	`s + t`
-
-​	将两个序列连接为一个新序列，必须为相同类型的序列
-
-​	`s * n`
-
-​	将序列重复指定的次数
-
-​	`len(s)`
-
-​	获取序列的长度
-
-​	`min(s)`
-
-​	获取序列中多个值的最小值
-
-​	`max(s)`
-
-​	获取序列中多个值的最大值
-
-​	`s.index(x [,i[, j]])`
-
-​	获取指定元素在序列中第一次出现的索引，如果没有x则报错
-
-​	`s.count(x)`
-
-​	统计x在s中出现的次数
+```python
+x in s		# 检查一个序列中是否包含指定元素
+x not in s	# 检查一个序列中是否不包含某个元素
+s + t		# 将两个序列连接为一个新序列，必须为相同类型的序列
+s * n		# 将序列重复指定的次数
+len(s)		# 获取序列的长度
+min(s)		# 获取序列中多个值的最小值
+max(s)		# 获取序列中多个值的最大值
+s.index(x [,i[, j]])	# 获取指定元素在序列中第一次出现的索引，如果没有x则报错
+s.count(x)	# 统计x在s中出现的次数
+```
 
 #### 列表（方法）
 
-​	`list.append(x)`
-
-​	将x添加到列表的末尾
-
-​	`list.extend(iterable)`
-
-​	将可迭代对象的所有项添加到列表中， 无视序列类型
-
-​	`list.insert(i, x)`
-
-​	将元素插入到指定位置
-
-​	`list.remove(x)`
-
-​	根据元素的值删除元素
-
-​	`list.pop([i])`
-
-​	根据索引删除并返回序列中的元素， 如果不传递索引则删除最后一个元素
-
-​	`list.clear()`
-
-​	清空列表
-
-​	`list.sort(key=None, reverse = False)`
-
-​	对列表排序
-
-​	`list.reverse()`
-
-​	反转列表
-
-​	`list.copy()`
-
-​	对列表进行浅复制
+```python
+list.append(x)				# 将x添加到列表的末尾
+list.extend(iterable)		# 将可迭代对象的所有项添加到列表中， 无视序列类型
+list.insert(i, x)			# 将元素插入到指定位置
+list.remove(x)				# 根据元素的值删除元素
+list.pop([i])				# 根据索引删除并返回序列中的元素， 如果不传递索引则删除最后一个元素
+list.clear()				# 清空列表
+list.sort(key=None, reverse = False)		# 对列表排序
+list.reverse()				# 反转列表
+list.copy()					# 对列表进行浅复制
+```
 
 #### `sort`与`sorted`的区别
 
@@ -433,100 +382,87 @@ s = 'hello %s' % 'abc'
 ​	字符串的方法
 
 ```python
-s.isalpha()
-检查字符串是否全部由字母组成，是返回true不是返回false
+s = 'abc'
+s.isalpha()			# 检查字符串是否全部由字母组成，是返回true不是返回false
 
-s.isnumeric() 表示数字就行比如 一、①、1 都返回True
-s.isdigit() 表示数字的符号 1、①
-s.isdecimal() 必须得是十进制的数字 1
-检查字符串是否全部由数字组成，是返回true不是返回false
+# 检查字符串是否全部由数字组成，是返回true不是返回false
+s.isnumeric() 		# 表示数字就行比如 一、①、1 都返回True
+s.isdigit() 		# 表示数字的符号 1、①
+s.isdecimal() 		# 必须得是十进制的数字 1
+				
+s.islower()			# 检查字符串是否全部为小写
+s.isupper()			# 检查字符串是否全部为大写
 
-s.islower()
-检查字符串是否全部为小写
-s.isupper()
-检查字符串是否全部为大写
+s.upper()			# 将一个字符串转换为大写
+s.lower()			# 将一个字符串转换为小写
+s.title()			# 将单词的首字母转换为大写
+s.capitalize()		# 将字符串的首字母大写
 
-s.upper()
-将一个字符串转换为大写
-s.lower()
-将一个字符串转换为小写
-s.title()
-将单词的首字母转换为大写
-s.capitalize()
-将字符串的首字母大写
-
-s.ljust()
-用来对一个字符串进行左对齐
-s.rjust()
-用来对一个字符串进行右对齐
-s.center()
-用来对一个字符串进行居中对齐
-参数：
-  width 字符串的长度，如果原来字符串不够，则会自动向左侧填充空格
-  fillchar 填充的字符
+s.ljust()			# 用来对一个字符串进行左对齐
+s.rjust()			# 用来对一个字符串进行右对齐
+s.center()			# 用来对一个字符串进行居中对齐
+# 参数：
+#   width 字符串的长度，如果原来字符串不够，则会自动向左侧填充空格
+#   fillchar 填充的字符
 print(s.rjust(10, '-'))
 print(s.ljust(10, '-'))
 print('欢迎光临'.center(40, '-'))
 
 s.split()
-用来将一个字符串拆分为一个列表，从左到右
-  参数
-      sep 分隔符，将会根据该分隔符来对字符串进行拆分
-      maxsplit 最大的拆分的数量，默认值-1
+# 用来将一个字符串拆分为一个列表，从左到右
+#   参数
+#       sep 分隔符，将会根据该分隔符来对字符串进行拆分
+#       maxsplit 最大的拆分的数量，默认值-1
 s = 'a,b,c,d,e,f'
 result = s.split(',')
 print(result)
 
-rsplit()
-  从右往左拆分字符串
+rsplit()			# 从右往左拆分字符串
 
-s.join()
-将一个列表中的元素连接为一个字符串
-  字符串将会作为连接符来使用
+s.join()			# 将一个列表中的元素连接为一个字符串	字符串将会作为连接符来使用
 lst = ['a', 'b', 'c', 'd', 'e']
 result = '@-@'.join(lst)
 
-s.find()     从左往右
-s.rfind()    从右往左
-查询字符串中是否包含某个子串
-  参数：
-       sub 要查询的子串
-       start 查询的开始位置
-       end 查询的结束位置
-  返回值
-      返回子串第一次出现的索引
-      如果没有返回 -1
+s.find()     # 从左往右
+s.rfind()    # 从右往左
+# 查询字符串中是否包含某个子串
+#   参数：
+#        sub 要查询的子串
+#        start 查询的开始位置
+#        end 查询的结束位置
+#   返回值
+#       返回子串第一次出现的索引
+#       如果没有返回 -1
 
-s.index()     从左往右
-s.rindex()    从右往左
-查询字符串中是否包含某个子串
-  参数：
-       sub 要查询的子串
-       start 查询的开始位置
-       end 查询的结束位置
-  返回值
-      返回子串第一次出现的索引
-      如果没有找到子串，会报错 ValueError: substring not found
+s.index()     # 从左往右
+s.rindex()    # 从右往左
+# 查询字符串中是否包含某个子串
+#   参数：
+#        sub 要查询的子串
+#        start 查询的开始位置
+#        end 查询的结束位置
+#   返回值
+#       返回子串第一次出现的索引
+#       如果没有找到子串，会报错 ValueError: substring not found
 s = 'Hello World'
 result = s.index('l', 4, 6)
 
-s.rstrip() 后边的空格
-s.lstrip() 左侧的空格
-s.strip()  前后都去
-去除字符中的前后空格
-  参数：
-      chars 要去除的字符，默认为None，只会去除空白字符
+s.rstrip() 		# 后边的空格
+s.lstrip() 		# 左侧的空格
+s.strip()  		# 前后都去
+# 去除字符中的前后空格
+#   参数：
+#       chars 要去除的字符，默认为None，只会去除空白字符
 
 s.startswith()
-s.endswith()
-  检查一个字符串是否已指定的内容开头或结尾
+s.endswith()		# 检查一个字符串是否已指定的内容开头或结尾
 
 s.replace(old, new[, count])
-该方法用来替换字符串中的指定子串
-  参数：
-      old 被替换的字符串
-      new 新的字符串
-      count 要替换的数量，默认为None，全都替换
+# 该方法用来替换字符串中的指定子串
+#   参数：
+#       old 被替换的字符串
+#       new 新的字符串
+#       count 要替换的数量，默认为None，全都替换
 ```
 
 
@@ -584,51 +520,45 @@ print(d)
 ```
 
 ```python
-检查字典中是否存在某个key
-          key in d 
-          key not in d 
-通过key来修改字典的value
-		d[key] = value
-        获取字典中不存在的key 会报出 KeyError
-        如果访问字典中不存在的key会报错，如果为字典中不存在的key赋值会自动添加
-	d.get(key[, default]) 
-            get() 
-              可以根据键来获取字典的值
-              参数：
-                  key 要获取到键
-                  default 可选参数，指定当键不存在时的返回值，默认None
-              返回值：
-                  如果key存在，则获取相应的值，如果key不存在返回None，不会报错
-	del d[key] 
-          根据key删除字典中键值对
-          如果删除一个不存在的key 会报错
-	d.clear() 
-          清空字典
-	d.pop(key[, default]) 
-          根据key来删除并返回指定的值
-          参数：
-              key 要删除的键
-              default 键不存在时返回的默认值，如果不指定，键不存在时会报错
-	d.popitem() 
-          删除并返回字典中任意的键值对 （删除最后一个）
-          如果对空字典调用，会报错 KeyError: 'popitem(): dictionary is empty'
-          返回值，返回一个双值元组，返回的是被删除的键值对
-	d.setdefault(key[, default]) 
-          获取字典的指定值，如果key不存在则自动添加
-          参数：
-              key 要查看的键，如果键不存在则会将该键添加到字典
-              defult 可选值，默认值为None 如果key不存在，则该值会作为value添加
-          返回值：
-              字典中的value
-	d.update([other]) 
-          将一个字典中的键值对添加到当前字典中
-          如果字典中没有这个key，则自动添加，如果有则替换
-	d.keys()
-          获取字典中所有的键
-	d.values()
-          获取字典中所有的值
-	d.itmes() 
-          获取字典中的所有的键值对
+key in d 
+key not in d 		# 检查字典中是否存在某个key
+
+d[key] = value		# 通过key来修改字典的value	
+					# 获取字典中不存在的key 会报出 KeyError
+					# 如果访问字典中不存在的key会报错，如果为字典中不存在的key赋值会自动添加
+
+d.get(key[, default]) 
+           # get() 
+             # 可以根据键来获取字典的值
+             # 参数：
+                 # key 要获取到键
+                 # default 可选参数，指定当键不存在时的返回值，默认None
+             # 返回值：
+                 # 如果key存在，则获取相应的值，如果key不存在返回None，不会报错
+del d[key] 		# 根据key删除字典中键值对		如果删除一个不存在的key 会报错
+          
+d.clear() 		# 清空字典
+          
+d.pop(key[, default]) 
+#          根据key来删除并返回指定的值
+#          参数：
+#              key 要删除的键
+#              default 键不存在时返回的默认值，如果不指定，键不存在时会报错
+d.popitem() 
+#          删除并返回字典中任意的键值对 （删除最后一个）
+#          如果对空字典调用，会报错 KeyError: 'popitem(): dictionary is empty'
+#          返回值，返回一个双值元组，返回的是被删除的键值对
+d.setdefault(key[, default]) 
+#          获取字典的指定值，如果key不存在则自动添加
+#          参数：
+#              key 要查看的键，如果键不存在则会将该键添加到字典
+#              defult 可选值，默认值为None 如果key不存在，则该值会作为value添加
+#          返回值：
+#              字典中的value
+	d.update([other]) 		# 将一个字典中的键值对添加到当前字典中	如果字典中没有这个key，则自动添加，如果有则替换
+	d.keys()		# 获取字典中所有的键
+	d.values()		# 获取字典中所有的值
+	d.itmes() 		# 获取字典中的所有的键值对
 遍历字典
     使用 for-in 遍历字典
 
