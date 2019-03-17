@@ -729,7 +729,7 @@ min= a if a<b else b
 
 > Python中一切皆对象
 
-Python中对象分成两类：可变对象和不可变对象。所谓可变对象是指，对象的内容可变，而不可变对象是指对象内容不可变。
+Python中有可变对象和不可变对象之分。可变对象创建后内容可以改变，但是地址不会改变；不可变对象创建之后不能改变，如果改变则会指向一个新的对象。
 
 **不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)**
 
@@ -1360,6 +1360,18 @@ class MyError(Exception):
     def fn():
         pass
 - 可以为一个函数指定多个装饰器，装饰会按照自内向外的顺序生效
+def login_decorator(func):
+    def inner(request,*args,**kwargs):
+        if request.user.is_authenticated():
+            return func(request,*args,**kwargs)
+        else:
+            if request.is_ajax():
+                return JsonResponse({'status':'nologin','msg':'ajax登陆'})
+            url = request.get_full_path()
+            ret = redirect(reverse('users:user_login'))
+            ret.set_cookie('url',url)
+            return ret
+    return inner
 ```
 ### 容器(container)
 
