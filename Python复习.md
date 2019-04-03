@@ -323,6 +323,7 @@ list.clear()				# 清空列表
 list.sort(key=None, reverse = False)		# 对列表排序
 list.reverse()				# 反转列表
 list.copy()					# 对列表进行浅复制
+enumerate(list)				# 用于将一个可遍历对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标
 ```
 
 #### `sort`与`sorted`的区别
@@ -422,6 +423,7 @@ rsplit()			# 从右往左拆分字符串
 s.join()			# 将一个列表中的元素连接为一个字符串	字符串将会作为连接符来使用
 lst = ['a', 'b', 'c', 'd', 'e']
 result = '@-@'.join(lst)
+>>>'a@-@b@-@c@-@d@-@e'
 
 s.find()     # 从左往右
 s.rfind()    # 从右往左
